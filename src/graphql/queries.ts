@@ -280,10 +280,89 @@ export const listMessages = /* GraphQL */ `
     }
   }
 `;
+export const userID = /* GraphQL */ `
+  query UserID(
+    $userID: ID!
+    $sortDirection: ModelSortDirection
+    $filter: ModelChatRoomUserFilterInput
+    $limit: Int
+    $nextToken: String
+  ) {
+    userID(
+      userID: $userID
+      sortDirection: $sortDirection
+      filter: $filter
+      limit: $limit
+      nextToken: $nextToken
+    ) {
+      items {
+        id
+        userID
+        chatRoomID
+        user {
+          id
+          name
+          imageUri
+          status
+          createdAt
+          updatedAt
+        }
+        chatRoom {
+          id
+          lastMessageID
+          createdAt
+          updatedAt
+        }
+        createdAt
+        updatedAt
+      }
+      nextToken
+    }
+  }
+`;
+export const chatRoomID = /* GraphQL */ `
+  query ChatRoomID(
+    $chatRoomID: ID!
+    $sortDirection: ModelSortDirection
+    $filter: ModelChatRoomUserFilterInput
+    $limit: Int
+    $nextToken: String
+  ) {
+    chatRoomID(
+      chatRoomID: $chatRoomID
+      sortDirection: $sortDirection
+      filter: $filter
+      limit: $limit
+      nextToken: $nextToken
+    ) {
+      items {
+        id
+        userID
+        chatRoomID
+        user {
+          id
+          name
+          imageUri
+          status
+          createdAt
+          updatedAt
+        }
+        chatRoom {
+          id
+          lastMessageID
+          createdAt
+          updatedAt
+        }
+        createdAt
+        updatedAt
+      }
+      nextToken
+    }
+  }
+`;
 export const messagesByChatRoom = /* GraphQL */ `
   query MessagesByChatRoom(
-    $chatRoomID: ID
-    $createdAt: ModelStringKeyConditionInput
+    $chatRoomID: ID!
     $sortDirection: ModelSortDirection
     $filter: ModelMessageFilterInput
     $limit: Int
@@ -291,7 +370,6 @@ export const messagesByChatRoom = /* GraphQL */ `
   ) {
     messagesByChatRoom(
       chatRoomID: $chatRoomID
-      createdAt: $createdAt
       sortDirection: $sortDirection
       filter: $filter
       limit: $limit

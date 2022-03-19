@@ -1,14 +1,16 @@
 {
-    "identityPoolName": "whatsappclonea764e33c_identitypool_a764e33c",
+  "version": "1",
+  "cognitoConfig": {
+    "identityPoolName": "whatsappcloneb1197d11_identitypool_b1197d11",
     "allowUnauthenticatedIdentities": false,
-    "resourceNameTruncated": "whatsaa764e33c",
-    "userPoolName": "whatsappclonea764e33c_userpool_a764e33c",
+    "resourceNameTruncated": "whatsab1197d11",
+    "userPoolName": "whatsappcloneb1197d11_userpool_b1197d11",
     "autoVerifiedAttributes": [
-        "email"
+      "email"
     ],
     "mfaConfiguration": "OFF",
     "mfaTypes": [
-        "SMS Text Message"
+      "SMS Text Message"
     ],
     "smsAuthenticationMessage": "Your authentication code is {####}",
     "smsVerificationMessage": "Your verification code is {####}",
@@ -18,34 +20,26 @@
     "passwordPolicyMinLength": 8,
     "passwordPolicyCharacters": [],
     "requiredAttributes": [
-        "email"
+      "email"
     ],
-    "userpoolClientGenerateSecret": true,
+    "aliasAttributes": [],
+    "userpoolClientGenerateSecret": false,
     "userpoolClientRefreshTokenValidity": 30,
     "userpoolClientWriteAttributes": [
-        "email"
+      "email"
     ],
     "userpoolClientReadAttributes": [
-        "email"
+      "email"
     ],
-    "userpoolClientLambdaRole": "whatsaa764e33c_userpoolclient_lambda_role",
+    "userpoolClientLambdaRole": "whatsab1197d11_userpoolclient_lambda_role",
     "userpoolClientSetAttributes": false,
-    "sharedId": "a764e33c",
-    "resourceName": "whatsappclonea764e33c",
+    "sharedId": "b1197d11",
+    "resourceName": "whatsappcloneb1197d11",
     "authSelections": "identityPoolAndUserPool",
-    "authRoleArn": {
-        "Fn::GetAtt": [
-            "AuthRole",
-            "Arn"
-        ]
-    },
-    "unauthRoleArn": {
-        "Fn::GetAtt": [
-            "UnauthRole",
-            "Arn"
-        ]
-    },
     "useDefault": "default",
     "userPoolGroupList": [],
-    "dependsOn": []
+    "serviceName": "Cognito",
+    "usernameCaseSensitive": false,
+    "useEnabledMfas": true
+  }
 }
